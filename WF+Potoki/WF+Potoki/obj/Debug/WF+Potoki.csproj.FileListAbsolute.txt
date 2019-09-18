@@ -1,0 +1,10 @@
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\bin\Debug\WF+Potoki.exe.config
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\bin\Debug\WF+Potoki.exe
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\bin\Debug\WF+Potoki.pdb
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\obj\Debug\WF+Potoki.csprojResolveAssemblyReference.cache
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\obj\Debug\WF_Potoki.Form1.resources
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\obj\Debug\WF_Potoki.Properties.Resources.resources
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\obj\Debug\WF+Potoki.csproj.GenerateResource.cache
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\obj\Debug\WF+Potoki.csproj.CoreCompileInputs.cache
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\obj\Debug\WF+Potoki.exe
+c:\users\висковатых.наталия\source\repos\WF+Potoki\WF+Potoki\obj\Debug\WF+Potoki.pdb

@@ -1,0 +1,106 @@
+TaskFactory - класс
+ 
+Предоставляет поддержку создания и планирования объектов Task.
+
+Пространство имен:   System.Threading.Tasks
+Сборка:  mscorlib (в mscorlib.dll)
+
+Иерархия наследования
+System.Object
+System.Threading.Tasks.TaskFactory
+
+Синтаксис
+[HostProtectionAttribute(SecurityAction.LinkDemand, Synchronization = true, 
+	ExternalThreading = true)]
+public class TaskFactory
+
+Конструкторы
+ TaskFactory()	Инициализирует экземпляр TaskFactory с конфигурацией по умолчанию.
+ TaskFactory(CancellationToken)	Инициализирует экземпляр TaskFactory с заданной конфигурацией.
+ TaskFactory(CancellationToken, TaskCreationOptions, TaskContinuationOptions, TaskScheduler)	Инициализирует экземпляр TaskFactory с заданной конфигурацией.
+ TaskFactory(TaskCreationOptions, TaskContinuationOptions)	Инициализирует экземпляр TaskFactory с заданной конфигурацией.
+ TaskFactory(TaskScheduler)	Инициализирует экземпляр TaskFactory с заданной конфигурацией.
+
+Свойства
+ CancellationToken	Возвращает токен отмены по умолчанию для этой фабрики задач.
+ ContinuationOptions	Возвращает параметры продолжения задач по умолчанию для этой фабрики задач.
+ CreationOptions	Возвращает параметры создания задач по умолчанию для этой фабрики задач.
+ Scheduler	Возвращает планировщик задач по умолчанию для этой фабрики задач.
+
+Методы
+ ContinueWhenAll(Task[], Action<Task[]>)Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll(Task[], Action<Task[]>, CancellationToken)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll(Task[], Action<Task[]>, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll(Task[], Action<Task[]>, TaskContinuationOptions)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TResult>(Task[], Func<Task[], TResult>)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TResult>(Task[], Func<Task[], TResult>, CancellationToken)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TResult>(Task[], Func<Task[], TResult>, CancellationToken, TaskContinuationOptions, TaskScheduler)Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TResult>(Task[], Func<Task[], TResult>, TaskContinuationOptions)Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TAntecedentResult>(Task<TAntecedentResult>[], Action<Task<TAntecedentResult>[]>)Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TAntecedentResult>(Task<TAntecedentResult>[], Action<Task<TAntecedentResult>[]>, CancellationToken)Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TAntecedentResult>(Task<TAntecedentResult>[], Action<Task<TAntecedentResult>[]>, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TAntecedentResult>(Task<TAntecedentResult>[], Action<Task<TAntecedentResult>[]>, TaskContinuationOptions)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TAntecedentResult, TResult>(Task<TAntecedentResult>[], Func<Task<TAntecedentResult>[], TResult>)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TAntecedentResult, TResult>(Task<TAntecedentResult>[], Func<Task<TAntecedentResult>[], TResult>, CancellationToken)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TAntecedentResult, TResult>(Task<TAntecedentResult>[], Func<Task<TAntecedentResult>[], TResult>, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAll<TAntecedentResult, TResult>(Task<TAntecedentResult>[], Func<Task<TAntecedentResult>[], TResult>, TaskContinuationOptions)	Создает задачу продолжения, которая запускается при завершении набора заданных задач.
+ ContinueWhenAny(Task[], Action<Task>)	Создает продолжение задачи Task, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny(Task[], Action<Task>, CancellationToken)	Создает продолжение задачи Task, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny(Task[], Action<Task>, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает продолжение задачи Task, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny(Task[], Action<Task>, TaskContinuationOptions)	Создает продолжение задачи Task, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TResult>(Task[], Func<Task, TResult>)	Создает продолжение задачи Task<TResult>, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TResult>(Task[], Func<Task, TResult>, CancellationToken)	Создает продолжение задачи Task<TResult>, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TResult>(Task[], Func<Task, TResult>, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает продолжение задачи Task<TResult>, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TResult>(Task[], Func<Task, TResult>, TaskContinuationOptions)	Создает продолжение задачи Task<TResult>, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TAntecedentResult>(Task<TAntecedentResult>[], Action<Task<TAntecedentResult>>)	Создает продолжение задачи Task, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TAntecedentResult>(Task<TAntecedentResult>[], Action<Task<TAntecedentResult>>, CancellationToken)	Создает продолжение задачи Task, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TAntecedentResult>(Task<TAntecedentResult>[], Action<Task<TAntecedentResult>>, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает продолжение задачи Task, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TAntecedentResult>(Task<TAntecedentResult>[], Action<Task<TAntecedentResult>>, TaskContinuationOptions)	Создает продолжение задачи Task, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TAntecedentResult, TResult>(Task<TAntecedentResult>[], Func<Task<TAntecedentResult>, TResult>)	Создает продолжение задачи Task<TResult>, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TAntecedentResult, TResult>(Task<TAntecedentResult>[], Func<Task<TAntecedentResult>, TResult>, CancellationToken)	Создает продолжение задачи Task<TResult>, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TAntecedentResult, TResult>(Task<TAntecedentResult>[], Func<Task<TAntecedentResult>, TResult>, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает продолжение задачи Task<TResult>, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ ContinueWhenAny<TAntecedentResult, TResult>(Task<TAntecedentResult>[], Func<Task<TAntecedentResult>, TResult>, TaskContinuationOptions)	Создает продолжение задачи Task<TResult>, которое будет запущено после завершения выполнения любой задачи в указанном наборе.
+ Equals(Object)	Определяет, равен ли заданный объект текущему объекту.(Наследуется от Object.)
+ Finalize()	Позволяет объекту попытаться освободить ресурсы и выполнить другие операции по очистке перед тем, как объект будет утилизирован сборщиком мусора. (Наследуется от Object.)
+ FromAsync(Func<AsyncCallback, Object, IAsyncResult>, Action<IAsyncResult>, Object)	Создает объект Task, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync(Func<AsyncCallback, Object, IAsyncResult>, Action<IAsyncResult>, Object, TaskCreationOptions)	Создает объект Task, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync(IAsyncResult, Action<IAsyncResult>)	Создает объект Task, который выполняет действие метода End по завершении заданного объекта IAsyncResult.
+ FromAsync(IAsyncResult, Action<IAsyncResult>, TaskCreationOptions)	Создает объект Task, который выполняет действие метода End по завершении заданного объекта IAsyncResult.
+ FromAsync(IAsyncResult, Action<IAsyncResult>, TaskCreationOptions, TaskScheduler)	Создает объект Task, который выполняет действие метода End по завершении заданного объекта IAsyncResult.
+ FromAsync<TArg1>(Func<TArg1, AsyncCallback, Object, IAsyncResult>, Action<IAsyncResult>, TArg1, Object)	Создает объект Task, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1>(Func<TArg1, AsyncCallback, Object, IAsyncResult>, Action<IAsyncResult>, TArg1, Object, TaskCreationOptions)	Создает объект Task, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TResult>(Func<AsyncCallback, Object, IAsyncResult>, Func<IAsyncResult, TResult>, Object)	Создает объект Task<TResult>, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TResult>(Func<AsyncCallback, Object, IAsyncResult>, Func<IAsyncResult, TResult>, Object, TaskCreationOptions)Создает объект Task<TResult>, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TResult>(IAsyncResult, Func<IAsyncResult, TResult>)	Создает объект Task<TResult>, который выполняет функцию метода End по завершении заданного объекта IAsyncResult.
+ FromAsync<TResult>(IAsyncResult, Func<IAsyncResult, TResult>, TaskCreationOptions)	Создает объект Task<TResult>, который выполняет функцию метода End по завершении заданного объекта IAsyncResult.
+ FromAsync<TResult>(IAsyncResult, Func<IAsyncResult, TResult>, TaskCreationOptions, TaskScheduler)	Создает объект Task<TResult>, который выполняет функцию метода End по завершении заданного объекта IAsyncResult.
+ FromAsync<TArg1, TArg2>(Func<TArg1, TArg2, AsyncCallback, Object, IAsyncResult>, Action<IAsyncResult>, TArg1, TArg2, Object)	Создает объект Task, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1, TArg2>(Func<TArg1, TArg2, AsyncCallback, Object, IAsyncResult>, Action<IAsyncResult>, TArg1, TArg2, Object, TaskCreationOptions)	Создает объект Task, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1, TResult>(Func<TArg1, AsyncCallback, Object, IAsyncResult>, Func<IAsyncResult, TResult>, TArg1, Object)	Создает объект Task<TResult>, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1, TResult>(Func<TArg1, AsyncCallback, Object, IAsyncResult>, Func<IAsyncResult, TResult>, TArg1, Object, TaskCreationOptions)	Создает объект Task<TResult>, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1, TArg2, TArg3>(Func<TArg1, TArg2, TArg3, AsyncCallback, Object, IAsyncResult>, Action<IAsyncResult>, TArg1, TArg2, TArg3, Object)	Создает объект Task, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1, TArg2, TArg3>(Func<TArg1, TArg2, TArg3, AsyncCallback, Object, IAsyncResult>, Action<IAsyncResult>, TArg1, TArg2, TArg3, Object, TaskCreationOptions)	Создает объект Task, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1, TArg2, TResult>(Func<TArg1, TArg2, AsyncCallback, Object, IAsyncResult>, Func<IAsyncResult, TResult>, TArg1, TArg2, Object)	Создает объект Task<TResult>, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1, TArg2, TResult>(Func<TArg1, TArg2, AsyncCallback, Object, IAsyncResult>, Func<IAsyncResult, TResult>, TArg1, TArg2, Object, TaskCreationOptions)	Создает объект Task<TResult>, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1, TArg2, TArg3, TResult>(Func<TArg1, TArg2, TArg3, AsyncCallback, Object, IAsyncResult>, Func<IAsyncResult, TResult>, TArg1, TArg2, TArg3, Object)	Создает объект Task<TResult>, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ FromAsync<TArg1, TArg2, TArg3, TResult>(Func<TArg1, TArg2, TArg3, AsyncCallback, Object, IAsyncResult>, Func<IAsyncResult, TResult>, TArg1, TArg2, TArg3, Object, TaskCreationOptions)	Создает объект Task<TResult>, который представляет пару методов begin и end, соответствующую шаблону модели асинхронного программирования.
+ GetHashCode()	Играет роль хэш-функции для определённого типа.(Наследуется от Object.)
+ GetType()	Возвращает объект класса Type для текущего экземпляра. (Наследуется от Object.)
+ MemberwiseClone()	Создает "поверхностную" копию текущего объекта. (Наследуется от Object.)
+ StartNew(Action)	Создает и запускает задачу.
+ StartNew(Action, CancellationToken)	Создает и запускает задачу Task.
+ StartNew(Action, CancellationToken, TaskCreationOptions, TaskScheduler)	Создает и запускает задачу Task.
+ StartNew(Action, TaskCreationOptions)	Создает и запускает задачу Task.
+ StartNew(Action<Object>, Object)	Создает и запускает задачу Task.
+ StartNew(Action<Object>, Object, CancellationToken)	Создает и запускает задачу Task.
+ StartNew(Action<Object>, Object, CancellationToken, TaskCreationOptions, TaskScheduler)	Создает и запускает задачу Task.
+ StartNew(Action<Object>, Object, TaskCreationOptions)	Создает и запускает задачу Task.
+ StartNew<TResult>(Func<TResult>)	Создает и запускает задачу Task<TResult>.
+ StartNew<TResult>(Func<TResult>, CancellationToken)	Создает и запускает задачу Task<TResult>.
+ StartNew<TResult>(Func<TResult>, CancellationToken, TaskCreationOptions, TaskScheduler)	Создает и запускает задачу Task<TResult>.
+ StartNew<TResult>(Func<TResult>, TaskCreationOptions)	Создает и запускает задачу Task<TResult>.
+ StartNew<TResult>(Func<Object, TResult>, Object)	Создает и запускает задачу Task<TResult>.
+ StartNew<TResult>(Func<Object, TResult>, Object, CancellationToken)	Создает и запускает задачу Task<TResult>.
+ StartNew<TResult>(Func<Object, TResult>, Object, CancellationToken, TaskCreationOptions, TaskScheduler)	Создает и запускает задачу Task<TResult>.
+ StartNew<TResult>(Func<Object, TResult>, Object, TaskCreationOptions)	Создает и запускает задачу Task<TResult>.
+ ToString()	Возвращает строковое представление текущего объекта.(Наследуется от Object.)

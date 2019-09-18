@@ -1,0 +1,35 @@
+CancellationToken - структура
+ 
+Распространяет уведомление о том, что операции следует отменить.
+Пространство имен:   System.Threading
+Сборка:  mscorlib (в mscorlib.dll)
+
+Синтаксис
+[ComVisibleAttribute(false)]
+[HostProtectionAttribute(SecurityAction.LinkDemand, Synchronization = true, ExternalThreading = true)]
+public struct CancellationToken
+
+Конструкторы
+ CancellationToken(Boolean)	Инициализирует объект CancellationToken.
+
+Свойства
+ CanBeCanceled	Возвращает значение, указывающее, может ли данный токен находиться в отмененном состоянии.
+ IsCancellationRequested	Возвращает значение, указывающее, есть ли для данного токена запрос на отмену.
+ static	None	Возвращает пустое значение CancellationToken.
+ WaitHandle	Возвращает дескриптор WaitHandle, получающий сигнал при отмене токена.
+
+Методы
+ Equals(CancellationToken)	Определяет, равен ли текущий экземпляр CancellationToken заданному токену.
+ Equals(Object)	Определяет, равен ли текущий экземпляр CancellationToken заданному объекту Object.(Переопределяет ValueType.Equals(Object).)
+ GetHashCode()	Служит хэш-функцией для CancellationToken.(Переопределяет ValueType.GetHashCode().)
+ GetType()	Возвращает объект класса Type для текущего экземпляра. (Наследуется от Object.)
+ Register(Action)	Регистрирует делегат, который будет вызываться при отмене данного токена CancellationToken.
+ Register(Action, Boolean)	Регистрирует делегат, который будет вызываться при отмене данного токена CancellationToken.
+ Register(Action<Object>, Object)	Регистрирует делегат, который будет вызываться при отмене данного токена CancellationToken.
+ Register(Action<Object>, Object, Boolean)	Регистрирует делегат, который будет вызываться при отмене данного токена CancellationToken.
+ ThrowIfCancellationRequested()	Создает исключение OperationCanceledException, если для данного токена есть запрос на отмену.
+ ToString()	Возвращает полное имя типа текущего экземпляра. (Наследуется от ValueType.)
+
+Операторы
+ static	Equality(CancellationToken, CancellationToken)	Определяет, равны ли два экземпляра CancellationToken.
+ static	Inequality(CancellationToken, CancellationToken)	Определяет, действительно ли два экземпляра CancellationToken не равны.

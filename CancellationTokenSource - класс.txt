@@ -1,0 +1,160 @@
+CancellationTokenSource - класс
+ 
+Отправляет токену CancellationToken сигнал отмены.
+Пространство имен:  System.Threading
+Сборка:  mscorlib (в mscorlib.dll)
+
+Иерархия наследования
+System.Object
+  System.Threading.CancellationTokenSource
+
+Синтаксис
+[ComVisibleAttribute(false)]
+[HostProtectionAttribute(SecurityAction.LinkDemand, Synchronization = true, ExternalThreading = true)]
+public class CancellationTokenSource : IDisposable
+
+Конструкторы
+ CancellationTokenSource()	Инициализирует новый экземпляр класса CancellationTokenSource.
+ CancellationTokenSource(Int32)	Инициализирует новый экземпляр класса CancellationTokenSource, который будет отменен после указанной задержки (в миллисекундах).
+ CancellationTokenSource(TimeSpan)	Инициализирует новый экземпляр класса CancellationTokenSource, который будет отменен после указанного периода времени.
+
+Свойства
+ IsCancellationRequested	Получает значение, указывающее, есть ли для данного объекта CancellationTokenSource запрос на отмену.
+ Token	Возвращает объект CancellationToken, связанный с этим объектом CancellationTokenSource.
+
+Методы
+ Cancel()	Передает запрос на отмену.
+ Cancel(Boolean)	Передает запрос отмены и определяет, будут ли последующие обратные вызовы и отменяемые операции обрабатываться.
+ CancelAfter(Int32)	Планирует операцию отмены для данного объекта CancellationTokenSource после указанного числа миллисекунд.
+ CancelAfter(TimeSpan)	Планирует операцию отмены для данного объекта CancellationTokenSource после указанного периода времени.
+ static	CreateLinkedTokenSource(CancellationToken,?CancellationToken)	Создает объект CancellationTokenSource, который будет иметь отмененное состояние, если какой-либо из исходных токенов находится в отмененном состоянии.
+ static	CreateLinkedTokenSource(CancellationToken[])	Создает объект CancellationTokenSource, который будет иметь отмененное состояние, если любой из исходных токенов в заданном массиве находится в отмененном состоянии.
+ Dispose()	Освобождает все ресурсы, используемые текущим экземпляром класса CancellationTokenSource.
+ Dispose(Boolean)	Освобождает неуправляемые ресурсы, используемые классом CancellationTokenSource (при необходимости освобождает и управляемые ресурсы).
+ Equals(Object)	Определяет, равен ли заданный объект текущему объекту.(Наследуется от Object.)
+ Finalize()	Позволяет объекту попытаться освободить ресурсы и выполнить другие операции по очистке перед тем, как объект будет утилизирован сборщиком мусора. (Наследуется от Object.)
+ GetHashCode()	Служит хэш-функцией по умолчанию.(Наследуется от Object.)
+ GetType()	Возвращает объект Type для текущего экземпляра.(Наследуется от Object.)
+ MemberwiseClone()	Создает неполную копию текущего объекта Object.(Наследуется от Object.)
+ ToString()	Возвращает строковое представление текущего объекта.(Наследуется от Object.)
+
+Заметки
+Начиная с .NET Framework 4, платформа .NET Framework использует новая универсальная модель совместной отмены асинхронных или долго выполняющихся синхронных операций, который включает в себя два объекта:
+A CancellationTokenSource object, который предоставляет токен отмены по его Token свойство и отправляет сообщение об отмене путем вызова его Cancel или CancelAfter метод.
+Объект CancellationToken объект, который указывает, является ли запрос на отмену.
+Общая схема реализации модели совместной отмены выглядит следующим образом:
+Создается экземпляр объекта CancellationTokenSource, который управляет уведомлениями об отмене и передает их отдельным токенам отмены.
+В каждую задачу или поток, ожидающий отмены, передается токен, возвращенный свойством CancellationTokenSource.Token.
+Вызов CancellationToken.IsCancellationRequested метод из операций, которые получают токен отмены. Предоставляет механизм для каждой задачи или потока для ответа на запрос отмены. Необходимость отменить операцию и точно как это сделать, зависит от логики приложения.
+Вызывается метод CancellationTokenSource.Cancel для предоставления уведомления об отмене. Это задает CancellationToken.IsCancellationRequested в каждом экземпляре токена отмены для true.
+Вызов Dispose метод при завершении работы с CancellationTokenSource объекта.
+Для получения дополнительной информации см. Cancellation in Managed Threads.
+
+Важно
+Этот тип реализует IDisposable интерфейса. По завершении использования экземпляра типа следует освободить его прямо или косвенно. Для удаления типа непосредственно вызвать его Dispose метод tryилиcatch блока. Для удаления его косвенно, использовать языковой конструкции, такие как using (в C#) или Using (в Visual Basic). Дополнительные сведения см. в разделе «Использование объекта, реализует IDisposable» IDisposable разделе интерфейса.
+
+Примеры
+В следующем примере генератора случайных чисел для эмуляции приложения сбора данных, которое считывает 10 целочисленных значений из одиннадцати различных инструментов. Нулевое значение указывает на сбой измерение для одного инструмента, в этом случае отмены операции и не общее среднее значение должно быть вычислено.
+Для обработки возможных отмены операции, в примере создается экземпляр CancellationTokenSource объекта, который создает токен отмены, который передается в TaskFactory объекта. TaskFactory Объект, в свою очередь передает токен отмены для каждой из задач отвечает за сбор показания для конкретного инструмента. TaskFactory.ContinueWhenAll<TAntecedentResult,?TResult>(Task<TAntecedentResult>[],?Func<Task<TAntecedentResult>[],?TResult>,?CancellationToken) Вызывается метод, чтобы убедиться, что среднее значение вычисляется только после успешно собраны все измерительных приборов. Если задача имеет не так, как она была отменена, вызов TaskFactory.ContinueWhenAll<TAntecedentResult,?TResult> метод создает исключение.
+
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+
+public class Example
+{
+   public static void Main()
+   {
+      // Define the cancellation token.
+      CancellationTokenSource source = new CancellationTokenSource();
+      CancellationToken token = source.Token;
+
+      Random rnd = new Random();
+      Object lockObj = new Object();
+
+      List<Task<int[]>> tasks = new List<Task<int[]>>();
+      TaskFactory factory = new TaskFactory(token);
+      for (int taskCtr = 0; taskCtr <= 10; taskCtr++) {
+         int iteration = taskCtr + 1;
+         tasks.Add(factory.StartNew( () => {
+                                       int value;
+                                       int[] values = new int[10];
+                                       for (int ctr = 1; ctr <= 10; ctr++) {
+                                          lock (lockObj) {
+                                             value = rnd.Next(0,101);
+                                          }
+                                          if (value == 0) { 
+                                             source.Cancel();
+                                             Console.WriteLine("Cancelling at task {0}", iteration);
+                                             break;
+                                          }   
+                                          values[ctr-1] = value; 
+                                       }
+                                       return values;
+                                    }, token));   
+
+      }
+      try {
+         Task<double> fTask = factory.ContinueWhenAll(tasks.ToArray(), 
+                                                      (results) => {
+                                                         Console.WriteLine("Calculating overall mean...");
+                                                         long sum = 0;
+                                                         int n = 0; 
+                                                         foreach (var t in results) {
+                                                            foreach (var r in t.Result) {
+                                                                  sum += r;
+                                                                  n++;
+                                                               }
+                                                         }
+                                                         return sum/(double) n;
+                                                      } , token);
+         Console.WriteLine("The mean is {0}.", fTask.Result);
+      }   
+      catch (AggregateException ae) {
+         foreach (Exception e in ae.InnerExceptions) {
+            if (e is TaskCanceledException)
+               Console.WriteLine("Unable to compute mean: {0}", 
+                                 ((TaskCanceledException) e).Message);
+            else
+               Console.WriteLine("Exception: " + e.GetType().Name);
+         }
+      }
+      finally {
+         source.Dispose();
+      }
+   }
+}
+// Repeated execution of the example produces output like the following:
+//       Cancelling at task 5
+//       Unable to compute mean: A task was canceled.
+//       
+//       Cancelling at task 10
+//       Unable to compute mean: A task was canceled.
+//       
+//       Calculating overall mean...
+//       The mean is 5.29545454545455.
+//       
+//       Cancelling at task 4
+//       Unable to compute mean: A task was canceled.
+//       
+//       Cancelling at task 5
+//       Unable to compute mean: A task was canceled.
+//       
+//       Cancelling at task 6
+//       Unable to compute mean: A task was canceled.
+//       
+//       Calculating overall mean...
+//       The mean is 4.97363636363636.
+//       
+//       Cancelling at task 4
+//       Unable to compute mean: A task was canceled.
+//       
+//       Cancelling at task 5
+//       Unable to compute mean: A task was canceled.
+//       
+//       Cancelling at task 4
+//       Unable to compute mean: A task was canceled.
+//       
+//       Calculating overall mean...
+//       The mean is 4.86545454545455.

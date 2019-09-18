@@ -1,0 +1,486 @@
+Task - класс
+ 
+Представляет асинхронную операцию.
+Просмотреть исходный код .NET Framework для этого типа Reference Source.
+Пространство имен:   System.Threading.Tasks
+Сборка:  mscorlib (в mscorlib.dll)
+
+Иерархия наследования
+System.Object
+  System.Threading.Tasks.Task
+    System.Threading.Tasks.Task<TResult>
+
+Синтаксис
+[HostProtectionAttribute(SecurityAction.LinkDemand, Synchronization = true, ExternalThreading = true)]
+public class Task : IAsyncResult, IDisposable
+
+Конструкторы
+ Task(Action)	Инициализирует новую задачу Task с заданным действием.
+ Task(Action, CancellationToken)	Инициализирует новую задачу Task с заданным действием и токеном CancellationToken.
+ Task(Action, CancellationToken, TaskCreationOptions)	Инициализирует новую задачу Task с заданными действием и параметрами создания.
+ Task(Action, TaskCreationOptions)	Инициализирует новую задачу Task с заданными действием и параметрами создания.
+ Task(Action<Object>, Object)	Инициализирует новую задачу Task с заданным действием и состоянием.
+ Task(Action<Object>, Object, CancellationToken)	Инициализирует новую задачу Task с заданными действием, состоянием и параметрами.
+ Task(Action<Object>, Object, CancellationToken, TaskCreationOptions)	Инициализирует новую задачу Task с заданными действием, состоянием и параметрами.
+ Task(Action<Object>, Object, TaskCreationOptions)	Инициализирует новую задачу Task с заданными действием, состоянием и параметрами.
+
+Свойства
+ AsyncState	Возвращает объект состояния, предоставленный при создании задачи Task, или значение null, если объект не предоставлен.
+ static	CompletedTask	Возвращает задачу, которая уже завершилась успешно.
+ CreationOptions	Возвращает объект TaskCreationOptions, используемый для создания данной задачи.
+ static	CurrentId	Возвращает идентификатор выполняющейся в настоящее время задачи Task.
+ Exception	Возвращает объект AggregateException, который привел к преждевременному завершению задачи Task. Если задача Task завершилась успешно или еще не создала ни одного исключения, возвращает значение null.
+ static	Factory	Предоставляет доступ к методам фабрики для создания и настройки экземпляров Task и Task<TResult>.
+ Id	Возвращает идентификатор данного экземпляра Task.
+ IsCanceled	Возвращает значение, указывающее, завершилось ли выполнение данного экземпляра Task из-за отмены.
+ IsCompleted	Возвращает значение, которое показывает, завершилась ли задача Task.
+ IsFaulted	Возвращает значение, указывающее, завершилась ли задача Task из-за необработанного исключения.
+ Status	Возвращает состояние TaskStatus данной задачи.
+
+Методы
+ ConfigureAwait(Boolean)	Настраивает объект типа awaiter, используемый для данного объекта Task.
+ ContinueWith(Action<Task, Object>, Object)	Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и выполняется после завершения целевой задачи Task.
+ ContinueWith(Action<Task, Object>, Object, CancellationToken)	Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и токен отмены и которое выполняется асинхронно после завершения целевой задачи Task.
+ ContinueWith(Action<Task, Object>, Object, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и токен отмены и которое выполняется после завершения целевой задачи Task. Продолжение выполняется на основе набора указанных условий и использует указанный планировщик.
+ ContinueWith(Action<Task, Object>, Object, TaskContinuationOptions)	Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и выполняется после завершения целевой задачи Task. Продолжение выполняется на основе набора указанных условий.
+ ContinueWith(Action<Task, Object>, Object, TaskScheduler)	Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и выполняется асинхронно после завершения целевой задачи Task. Продолжение использует указанный планировщик.
+ ContinueWith(Action<Task>)	Создает продолжение, которое выполняется асинхронно после завершения выполнения целевой задачи Task.
+ ContinueWith(Action<Task>, CancellationToken)	Создает продолжение, которое получает токен отмены и выполняется асинхронно после завершения целевой задачи Task.
+ ContinueWith(Action<Task>, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает продолжение, выполняемое после завершения целевой задачи в соответствии с заданными параметрами TaskContinuationOptions. Продолжение получает токен отмены и использует указанный планировщик.
+ ContinueWith(Action<Task>, TaskContinuationOptions)	Создает продолжение, выполняемое после завершения целевой задачи в соответствии с заданными параметрами TaskContinuationOptions.
+ ContinueWith(Action<Task>, TaskScheduler)	Создает продолжение, которое выполняется асинхронно после завершения выполнения целевой задачи Task. Продолжение использует указанный планировщик.
+ ContinueWith<TResult>(Func<Task, TResult>)	Создает продолжение, которое выполняется асинхронно после завершения целевой задачи Task<TResult> и возвращает значение.
+ ContinueWith<TResult>(Func<Task, TResult>, CancellationToken)	Создает продолжение, которое выполняется асинхронно после завершения целевой задачи Task и возвращает значение. Продолжение получает токен отмены.
+ ContinueWith<TResult>(Func<Task, TResult>, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает продолжение, выполняемое в соответствии с заданными параметрами и возвращает значение. Продолжение получает токен отмены и использует указанный планировщик.
+ ContinueWith<TResult>(Func<Task, TResult>, TaskContinuationOptions)	Создает продолжение, выполняемое в соответствии с заданными параметрами и возвращает значение.
+ ContinueWith<TResult>(Func<Task, TResult>, TaskScheduler)	Создает продолжение, которое выполняется асинхронно после завершения целевой задачи Task и возвращает значение. Продолжение использует указанный планировщик.
+ ContinueWith<TResult>(Func<Task, Object, TResult>, Object)	Создает продолжение, которое получает предоставленные вызывающей стороной сведения о состоянии и выполняется асинхронно после завершения целевой задачи Task, а также возвращает значение.
+ ContinueWith<TResult>(Func<Task, Object, TResult>, Object, CancellationToken)	Создает продолжение, которое выполняется асинхронно после завершения целевой задачи Task и возвращает значение. Продолжение получает предоставленные вызывающей стороной сведения и токен отмены.
+ ContinueWith<TResult>(Func<Task, Object, TResult>, Object, CancellationToken, TaskContinuationOptions, TaskScheduler)	Создает продолжение, которое выполняется на основе указанных параметров продолжения токена после завершения целевой задачи Task и возвращает значение. Продолжение получает предоставленные вызывающей стороной сведения и токен отмены, а также использует указанный планировщик.
+ ContinueWith<TResult>(Func<Task, Object, TResult>, Object, TaskContinuationOptions)	Создает продолжение, которое выполняется на основе указанных параметров продолжения токена после завершения целевой задачи Task. Продолжение получает предоставленные вызывающей стороной сведения.
+ ContinueWith<TResult>(Func<Task, Object, TResult>, Object, TaskScheduler)	Создает продолжение, которое выполняется асинхронно после завершения выполнения целевой задачи Task. Продолжение получает предоставленные вызывающей стороной сведения и использует указанный планировщик.
+ static	Delay(Int32)	Создает задачу, которая будет выполнена после некоторой временной задержки.
+ static	Delay(Int32, CancellationToken)	Создает отменяемую задачу, которая будет выполнена после некоторой временной задержки.
+ static	Delay(TimeSpan)	Создает задачу, которая завершается через заданное время.
+ static	Delay(TimeSpan, CancellationToken)	Создает отменяемую задачу, которая завершается через заданное время.
+ Dispose()	Освобождает все ресурсы, используемые текущим экземпляром класса Task.
+ Dispose(Boolean)	Удаляет задачуTask, освобождая все используемые ею неуправляемые ресурсы.
+ Equals(Object)	Определяет, равен ли заданный объект текущему объекту.(Наследуется от Object.)
+ Finalize()	Позволяет объекту попытаться освободить ресурсы и выполнить другие операции по очистке перед тем, как объект будет утилизирован сборщиком мусора. (Наследуется от Object.)
+ static	FromCanceled(CancellationToken)	Создает задачу Task, которая завершилась из-за отмены с помощью указанного маркера отмены.
+ static	FromCanceled<TResult>(CancellationToken)	Создает задачу Task<TResult>, которая завершилась из-за отмены с помощью указанного маркера отмены.
+ static	FromException(Exception)	Создает задачу Task, которая завершилась с указанным исключением.
+ static	FromException<TResult>(Exception)	Создает задачу Task<TResult>, которая завершилась с указанным исключением.
+ static	FromResult<TResult>(TResult)	Создает задачу Task<TResult>, которая завершается удачно с указанным результатом.
+ GetAwaiter()	Получает объект типа awaiter, используемый для данного объекта Task.
+ GetHashCode()	Служит хэш-функцией по умолчанию.(Наследуется от Object.)
+ GetType()	Возвращает объект Type для текущего экземпляра.(Наследуется от Object.)
+ MemberwiseClone()	Создает неполную копию текущего объекта Object.(Наследуется от Object.)
+ static	Run(Action)	Ставит в очередь заданную работу для запуска в пуле потоков и возвращает объект Task, представляющий эту работу.
+ static	Run(Action, CancellationToken)	Ставит в очередь заданную работу для запуска в пуле потоков и возвращает объект Task, представляющий эту работу. Токен отмены позволяет отменить работу.
+ static	Run(Func<Task>)	Ставит в очередь указанную работу для запуска в пуле потоков и возвращает прокси для задачи, возвращаемой функцией function.
+ static	Run(Func<Task>, CancellationToken)	Ставит в очередь указанную работу для запуска в пуле потоков и возвращает прокси для задачи, возвращаемой функцией function.
+ static	Run<TResult>(Func<TResult>)	Ставит в очередь заданную работу для запуска в пуле потоков и возвращает объект Task<TResult>, представляющий эту работу.
+ static	Run<TResult>(Func<TResult>, CancellationToken)	Ставит в очередь заданную работу для запуска в пуле потоков и возвращает объект Task(TResult), представляющий эту работу. Токен отмены позволяет отменить работу.
+ static	Run<TResult>(Func<Task<TResult>>)	Помещает в очередь заданную работу для запуска в пуле потоков и возвращает прокси для Task(TResult) возвращаемый function.
+ static	Run<TResult>(Func<Task<TResult>>, CancellationToken)	Помещает в очередь заданную работу для запуска в пуле потоков и возвращает прокси для Task(TResult) возвращаемый function.
+ RunSynchronously()	Синхронно выполняет задачу Task в текущем планировщике TaskScheduler.
+ RunSynchronously(TaskScheduler)	Синхронно выполняет задачу Task в предоставленном планировщике TaskScheduler.
+ Start()	Запускает задачу Task, планируя ее выполнение в текущем планировщике TaskScheduler.
+ Start(TaskScheduler)	Запускает задачу Task, планируя ее выполнение в заданном планировщике TaskScheduler.
+ ToString()	Возвращает строковое представление текущего объекта.(Наследуется от Object.)
+ Wait()	Ожидает завершения выполнения задачи Task.
+ Wait(CancellationToken)	Ожидает завершения выполнения задачи Task. Ожидание завершается, если токен отмены отменяется до завершения задачи.
+ Wait(Int32)	Ожидает завершения задачи Task в течение указанного числа миллисекунд.
+ Wait(Int32, CancellationToken)	Ожидает завершения выполнения задачи Task. Ожидание завершается, если время ожидания истекает или токен отмены отменяется до завершения задачи.
+ Wait(TimeSpan)	Ожидает завершения выполнения задач Task в течение указанного временного периода.
+ static	WaitAll(Task[])	Ожидает завершения выполнения всех указанных объектов Task.
+ static	WaitAll(Task[], CancellationToken)	Ожидает завершения выполнения всех указанных объектов Task, пока ожидание не будет отменено.
+ static	WaitAll(Task[], Int32)	Ожидает завершения выполнения всех указанных объектов Task в течение указанного числа миллисекунд.
+ static	WaitAll(Task[], Int32, CancellationToken)	Ожидает завершения выполнения всех указанных объектов Task в течение указанного числа миллисекунд или до отмены ожидания.
+ static	WaitAll(Task[], TimeSpan)	Ожидает завершения выполнения всех указанных отменяемых объектов Task в течение указанного временного интервала.
+ static	WaitAny(Task[])	Ожидает завершения выполнения любого из указанных объектов Task.
+ static	WaitAny(Task[], CancellationToken)	Ожидает завершения выполнения всех указанных объектов Task, пока ожидание не будет отменено.
+ static	WaitAny(Task[], Int32)	Ожидает завершения выполнения любого из указанных объектов Task в течение указанного числа миллисекунд.
+ static	WaitAny(Task[], Int32, CancellationToken)	Ожидает завершения выполнения всех указанных объектов Task в течение указанного числа миллисекунд или до отмены токена отмены.
+ static	WaitAny(Task[], TimeSpan)	Ожидает завершения выполнения любого из указанных отменяемых объектов Task в течение указанного временного интервала.
+ static	WhenAll(IEnumerable<Task>)	Создает задачу, которая будет выполнена, когда все Task объекты в перечислимой коллекции будут завершены.
+ static	WhenAll(Task[])	Создает задачу, которая будет выполнена, когда все Task объекты в массиве будут завершены.
+ static	WhenAll<TResult>(IEnumerable<Task<TResult>>)	Создает задачу, которая будет выполнена, когда все Task<TResult> объекты в перечислимой коллекции будут завершены.
+ static	WhenAll<TResult>(Task<TResult>[])	Создает задачу, которая будет выполнена, когда все Task<TResult> объекты в массиве будут завершены.
+ static	WhenAny(IEnumerable<Task>)	Создает задачу, которая будет выполнена после выполнения любой из предоставленных задач.
+ static	WhenAny(Task[])	Создает задачу, которая будет выполнена после выполнения любой из предоставленных задач.
+ static	WhenAny<TResult>(IEnumerable<Task<TResult>>)	Создает задачу, которая будет выполнена после выполнения любой из предоставленных задач.
+ static	WhenAny<TResult>(Task<TResult>[])	Создает задачу, которая будет выполнена после выполнения любой из предоставленных задач.
+ static	Yield()	Создает поддерживающий ожидание объект задачи, который асинхронно возвратится в текущий контекст синхронизации, когда его ожидают.
+
+Явные реализации интерфейса
+ IAsyncResult.AsyncWaitHandle	Возвращает дескриптор WaitHandle, который можно использовать для ожидания завершения задачи.
+ IAsyncResult.CompletedSynchronously	Возвращает значение, указывающее, синхронно ли выполнена операция.
+
+Методы расширения
+ DispatcherOperationWait()	Перегружен. Означает неограниченное время ожидания для базового DispatcherOperation для завершения.(Определяется в TaskExtensions.)
+ DispatcherOperationWait(TimeSpan)	Перегружен. Ожидает в течение заданного периода времени для базового DispatcherOperation для завершения.(Определяется в TaskExtensions.)
+ IsDispatcherOperationTask()	Возвращает значение, указывающее, является ли это Task связанных с DispatcherOperation.(Определяется в TaskExtensions.)
+
+Заметки
+
+Примечание
+Чтобы просмотреть исходный код .NET Framework для этого типа, см. раздел Reference Source. Просмотр исходного кода в Интернете, загружаемом справочнике для автономного просмотра и пошагово источники (включая исправления и обновления) во время отладки; see instructions.
+Task Класса представляет одну операцию, которая не возвращает значение и обычно выполняется асинхронно. Task объекты являются одной из основных составляющих асинхронная модель на основе задач впервые появились в .NET Framework 4. Поскольку работа, выполняемые Task объекта обычно выполняется асинхронно в потоке пула потоков, а не синхронно в потоке основного приложения, можно использовать Status Свойства, а также IsCanceled, IsCompleted, и IsFaulted Свойства, чтобы определить состояние задачи. Чаще всего лямбда-выражение используется для указания задания, для выполнения задачи.
+Для операций, возвращающих значения, используйте Task<TResult> класса.
+
+Создание и выполнение задачи
+Task экземпляры могут создаваться различными способами. Наиболее распространенный подход, который доступен, начиная с .NET Framework 4.5, — вызов статического Run метод. Run Метод предоставляет простой способ запустить задачу, используя значения по умолчанию и не требует дополнительных параметров. В следующем примере используется Run(Action) метод для запуска задачи, циклы и затем отображает количество итераций цикла:
+
+using System;
+using System.Threading.Tasks;
+
+public class Example
+{
+   public static void Main()
+   {
+      Task t = Task.Run( () => {
+                                  // Just loop.
+                                  int ctr = 0;
+                                  for (ctr = 0; ctr <= 1000000; ctr++)
+                                  {}
+                                  Console.WriteLine("Finished {0} loop iterations",
+                                                    ctr);
+                               } );
+      t.Wait();
+   }
+}
+// The example displays the following output:
+//        Finished 1000001 loop iterations
+Альтернативы и наиболее распространенный метод для запуска задачи в .NET Framework 4, является статическим TaskFactory.StartNew метод. Task.Factory Возвращает свойство TaskFactory объекта. Перегруженные версии TaskFactory.StartNew метод позволяет задавать параметры для передачи параметров создания задачи и планировщик задач. В следующем примере используется TaskFactory.StartNew метод для запуска задачи. Это функционально эквивалентно коду в предыдущем примере.
+
+using System;
+using System.Threading.Tasks;
+
+public class Example
+{
+   public static void Main()
+   {
+      Task t = Task.Factory.StartNew( () => {
+                                  // Just loop.
+                                  int ctr = 0;
+                                  for (ctr = 0; ctr <= 1000000; ctr++)
+                                  {}
+                                  Console.WriteLine("Finished {0} loop iterations",
+                                                    ctr);
+                               } );
+      t.Wait();
+   }
+}
+// The example displays the following output:
+//        Finished 1000001 loop iterations
+Более полные примеры см. в разделе Task Parallelism (Task Parallel Library).
+
+Разделение задач создания и выполнения
+Task Класс также предоставляет конструкторы, которые инициализируют задачу, но не запланировать его выполнение. Из соображений производительности Task.Run или TaskFactory.StartNew метод является предпочтительным механизмом создания и планирования вычислительных задач, но для сценариев, где создание и планирование должны разделяться, можно использовать конструкторы и затем вызвать Task.Start для планирования задачи для выполнения на более позднее время.
+Ожидание завершения одной или нескольких задач
+Поскольку задачи обычно выполняются асинхронно в потоке пула потоков, потоке, который создает и запускает задачу в продолжает выполнение сразу после создания экземпляра задачи. В некоторых случаях, если вызывающий поток главного потока приложения, приложение может завершиться перед любым задачи фактически начинает выполнение. В других логику приложения может потребоваться, что вызывающему потоку продолжить выполнение только после завершения выполнения одной или нескольких задач. Вы можете синхронизировать выполнение вызывающего потока и асинхронной задачи она запускает путем вызова Wait метод для ожидания завершения одного или нескольких задач.
+Чтобы дождаться завершения выполнения одной задачи, можно вызвать ее Task.Wait метод. Вызов Wait метод блокирует вызывающий поток до завершения выполнения экземпляра одного класса.
+В следующем примере вызывается без параметров Wait() метод безусловно дождаться завершения задачи. Задача имитирует работы путем вызова Thread.Sleep метод в спящий режим в течение двух секунд.
+
+using System;   
+using System.Threading;
+using System.Threading.Tasks;
+
+class Program
+{
+    static Random rand = new Random();
+
+    static void Main()
+    {
+        // Wait on a single task with no timeout specified.
+        Task taskA = Task.Run( () => Thread.Sleep(2000));
+        Console.WriteLine("taskA Status: {0}", taskA.Status);
+        try {
+          taskA.Wait();
+          Console.WriteLine("taskA Status: {0}", taskA.Status);
+       } 
+       catch (AggregateException) {
+          Console.WriteLine("Exception in taskA.");
+       }   
+    }    
+}
+// The example displays output like the following:
+//     taskA Status: WaitingToRun
+//     taskA Status: RanToCompletion
+Условно также может ожидать завершения задачи. Wait(Int32) И Wait(TimeSpan) методы блокирует вызывающий поток до завершения задачи или истечет время ожидания, что наступит раньше. Так как следующий пример запускает задачу, которая определяет значение времени ожидания одной секунде, вызывающий поток блокируется, пока не истечет время ожидания, но бездействует в течение двух секунд и до завершения выполнения задачи.
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+public class Example
+{
+   public static void Main()
+   {
+      // Wait on a single task with a timeout specified.
+      Task taskA = Task.Run( () => Thread.Sleep(2000));
+      try {
+        taskA.Wait(1000);       // Wait for 1 second.
+        bool completed = taskA.IsCompleted;
+        Console.WriteLine("Task A completed: {0}, Status: {1}",
+                         completed, taskA.Status);
+        if (! completed)
+           Console.WriteLine("Timed out before task A completed.");                 
+       }
+       catch (AggregateException) {
+          Console.WriteLine("Exception in taskA.");
+       }   
+   }
+}
+// The example displays output like the following:
+//     Task A completed: False, Status: Running
+//     Timed out before task A completed.
+Можно также указать токен отмены, вызвав Wait(CancellationToken) и Wait(Int32, CancellationToken) методы. Если маркер IsCancellationRequested свойство true, отмены ожидания; если он становится значение true при Wait завершает метод.
+В некоторых случаях может потребоваться подождать для первого ряда выполнение задач для выполнения, но не является внимания, что задачи. Для этой цели можно вызвать одну из перегрузок Task.WaitAll метод. В следующем примере создается три задачи, каждая из которых находится в спящем режиме, для определения интервала, генератор случайных чисел. WaitAny(Task[]) Метод ожидает завершения выполнения первой задачи. Затем выполняется отображение сведений о состоянии всех этих трех задач.
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+public class Example
+{
+   public static void Main()
+   {
+      var tasks = new Task[3];
+      var rnd = new Random();
+      for (int ctr = 0; ctr <= 2; ctr++)
+         tasks[ctr] = Task.Run( () => Thread.Sleep(rnd.Next(500, 3000)));
+
+      try {
+         int index = Task.WaitAny(tasks);
+         Console.WriteLine("Task #{0} completed first.\n", tasks[index].Id);
+         Console.WriteLine("Status of all tasks:");
+         foreach (var t in tasks)
+            Console.WriteLine("   Task #{0}: {1}", t.Id, t.Status);
+      }
+      catch (AggregateException) {
+         Console.WriteLine("An exception occurred.");
+      }
+   }
+}
+// The example displays output like the following:
+//     Task #1 completed first.
+//     
+//     Status of all tasks:
+//        Task #3: Running
+//        Task #1: RanToCompletion
+//        Task #4: Running
+Также можно отложить все последовательности задач для завершения путем вызова WaitAll метод. Следующий пример создает десять задач, ожидания для всех десяти для завершения, а затем отображает их состояние.
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+public class Example
+{
+   public static void Main()
+   {
+      // Wait for all tasks to complete.
+      Task[] tasks = new Task[10];
+      for (int i = 0; i < 10; i++)
+      {
+          tasks[i] = Task.Run(() => Thread.Sleep(2000));
+      }
+      try {
+         Task.WaitAll(tasks);
+      }
+      catch (AggregateException ae) {
+         Console.WriteLine("One or more exceptions occurred: ");
+         foreach (var ex in ae.Flatten().InnerExceptions)
+            Console.WriteLine("   {0}", ex.Message);
+      }   
+
+      Console.WriteLine("Status of completed tasks:");
+      foreach (var t in tasks)
+         Console.WriteLine("   Task #{0}: {1}", t.Id, t.Status);
+   }
+}
+// The example displays the following output:
+//     Status of completed tasks:
+//        Task #2: RanToCompletion
+//        Task #1: RanToCompletion
+//        Task #3: RanToCompletion
+//        Task #4: RanToCompletion
+//        Task #6: RanToCompletion
+//        Task #5: RanToCompletion
+//        Task #7: RanToCompletion
+//        Task #8: RanToCompletion
+//        Task #9: RanToCompletion
+//        Task #10: RanToCompletion
+Обратите внимание, что при ожидании завершения одного или нескольких задач, все исключения, возникшие в выполняемые задачи распространяются на поток, который вызывает Wait метода, как показано в следующем примере. Она запускает 12 задачи, три из которых нормально завершен и три из которых выдал исключение. Оставшиеся шесть задач три будут отменены до ее начала и три будут отменены при их выполнении. Исключения WaitAll обрабатывается вызывают метод tryилиcatch блока.
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+public class Example
+{
+   public static void Main()
+   {
+      // Create a cancellation token and cancel it.
+      var source1 = new CancellationTokenSource();
+      var token1 = source1.Token;
+      source1.Cancel();
+      // Create a cancellation token for later cancellation.
+      var source2 = new CancellationTokenSource();
+      var token2 = source2.Token;
+
+      // Create a series of tasks that will complete, be cancelled, 
+      // timeout, or throw an exception.
+      Task[] tasks = new Task[12];
+      for (int i = 0; i < 12; i++)
+      {
+          switch (i % 4) 
+          {
+             // Task should run to completion.
+             case 0:
+                tasks[i] = Task.Run(() => Thread.Sleep(2000));
+                break;
+             // Task should be set to canceled state.
+             case 1:   
+                tasks[i] = Task.Run( () => Thread.Sleep(2000),
+                         token1);
+                break;         
+             case 2:
+                // Task should throw an exception.
+                tasks[i] = Task.Run( () => { throw new NotSupportedException(); } );
+                break;
+             case 3:
+                // Task should examine cancellation token.
+                tasks[i] = Task.Run( () => { Thread.Sleep(2000); 
+                                             if (token2.IsCancellationRequested)
+                                                token2.ThrowIfCancellationRequested();
+                                             Thread.Sleep(500); }, token2);   
+                break;
+          }
+      }
+      Thread.Sleep(250);
+      source2.Cancel();
+
+      try {
+         Task.WaitAll(tasks);
+      }
+      catch (AggregateException ae) {
+          Console.WriteLine("One or more exceptions occurred:");
+          foreach (var ex in ae.InnerExceptions)
+             Console.WriteLine("   {0}: {1}", ex.GetType().Name, ex.Message);
+       }   
+
+      Console.WriteLine("\nStatus of tasks:");
+      foreach (var t in tasks) {
+         Console.WriteLine("   Task #{0}: {1}", t.Id, t.Status);
+         if (t.Exception != null) {
+            foreach (var ex in t.Exception.InnerExceptions)
+               Console.WriteLine("      {0}: {1}", ex.GetType().Name,
+                                 ex.Message);
+         }
+      }
+   }
+}
+// The example displays output like the following:
+//   One or more exceptions occurred:
+//      TaskCanceledException: A task was canceled.
+//      NotSupportedException: Specified method is not supported.
+//      TaskCanceledException: A task was canceled.
+//      TaskCanceledException: A task was canceled.
+//      NotSupportedException: Specified method is not supported.
+//      TaskCanceledException: A task was canceled.
+//      TaskCanceledException: A task was canceled.
+//      NotSupportedException: Specified method is not supported.
+//      TaskCanceledException: A task was canceled.
+//   
+//   Status of tasks:
+//      Task #13: RanToCompletion
+//      Task #1: Canceled
+//      Task #3: Faulted
+//         NotSupportedException: Specified method is not supported.
+//      Task #8: Canceled
+//      Task #14: RanToCompletion
+//      Task #4: Canceled
+//      Task #6: Faulted
+//         NotSupportedException: Specified method is not supported.
+//      Task #7: Canceled
+//      Task #15: RanToCompletion
+//      Task #9: Canceled
+//      Task #11: Faulted
+//         NotSupportedException: Specified method is not supported.
+//      Task #12: Canceled
+Дополнительные сведения об обработке исключений в асинхронной операции на основе задач см. в разделе Обработка исключений (библиотека параллельных задач).
+
+Задачи и языка и региональных параметров
+Начиная с настольных приложений, ориентированных на .NET Framework 4.6, язык и региональные параметры потока, который создает и запускает задачу становится частью контекст потока. Независимо от того, текущими региональными параметрами потока, на котором выполняется задача, текущий язык и региональные параметры задачи является языка и региональных параметров вызывающего потока. Для приложений, предназначенных для версий платформы .NET Framework до версии .NET Framework 4.6, язык и региональные параметры задачи — это поток, на котором выполняется задача. Дополнительные сведения см. в разделе «Язык и региональные параметры и асинхронные операции на основе задач» в CultureInfo разделе.
+
+Примечание
+Приложения для магазина выполните среды выполнения Windows в установку и получение языка и региональных параметров по умолчанию.
+Для разработчиков отладчика
+Для разработчиков, реализующих пользовательские отладчики, могут быть полезны некоторые закрытые (private) и внутренние(internal) члены класса Task (эти члены могут меняться от релиза к релизу). m_taskId Поле выступает в качестве резервного хранилища для Id Свойства, однако доступ к ним в этом поле прямо из отладчика может быть более эффективным, чем доступ через метод получения значения свойства и то же значение ( s_taskIdCounter счетчик используется для получения следующий доступный идентификатор задачи). Аналогичным образом m_stateFlags поле хранятся сведения о текущем этапе жизненного цикла задачи сведения также доступны через Status свойство. m_action Поле хранит ссылку на делегат задачи и m_stateObject поле сохраняет асинхронное состояние, переданный задаче разработчиком. Наконец, для отладчиков разбора кадров стека InternalWait метод служит потенциальным для когда задача переходит в операции ожидания.
+
+Примеры
+Следующий пример создает и выполняет четыре задачи. Выполните три задачи Action<T> делегат с именем action, который принимает аргумент типа Object. Четвертая задача выполняется лямбда-выражения ( Action Делегировать) именно встроенными в вызове метода создания задачи. Каждая задача создается и выполнить другим способом:
+Задача t1 создается путем вызова конструктора класса задачи, но запускается путем вызова его Start() метод только после задачи t2 запущена.
+Задача t2 создается и работы в одном вызове метода путем вызова TaskFactory.StartNew(Action<Object>, Object) метод.
+Задача t3 создается и работы в одном вызове метода путем вызова Run(Action) метод.
+Задача t4 выполняется синхронно в главном потоке путем вызова RunSynchronously() метод.
+Поскольку задача t4 выполняется синхронно, он выполняет для основного потока приложения. Остальные задачи асинхронное выполнение обычно один или несколько потоков в пуле потоков.
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+class Example
+{
+    static void Main()
+    {
+        Action<object> action = (object obj) =>
+                                {
+                                   Console.WriteLine("Task={0}, obj={1}, Thread={2}",
+                                   Task.CurrentId, obj,
+                                   Thread.CurrentThread.ManagedThreadId);
+                                };
+
+        // Create a task but do not start it.
+        Task t1 = new Task(action, "alpha");
+
+        // Construct a started task
+        Task t2 = Task.Factory.StartNew(action, "beta");
+        // Block the main thread to demonstate that t2 is executing
+        t2.Wait();
+
+        // Launch t1 
+        t1.Start();
+        Console.WriteLine("t1 has been launched. (Main Thread={0})",
+                          Thread.CurrentThread.ManagedThreadId);
+        // Wait for the task to finish.
+        t1.Wait();
+
+        // Construct a started task using Task.Run.
+        String taskData = "delta";
+        Task t3 = Task.Run( () => {Console.WriteLine("Task={0}, obj={1}, Thread={2}",
+                                                     Task.CurrentId, taskData,
+                                                      Thread.CurrentThread.ManagedThreadId);
+                                   });
+        // Wait for the task to finish.
+        t3.Wait();
+
+        // Construct an unstarted task
+        Task t4 = new Task(action, "gamma");
+        // Run it synchronously
+        t4.RunSynchronously();
+        // Although the task was run synchronously, it is a good practice
+        // to wait for it in the event exceptions were thrown by the task.
+        t4.Wait();
+    }
+}
+// The example displays output like the following:
+//       Task=1, obj=beta, Thread=3
+//       t1 has been launched. (Main Thread=1)
+//       Task=2, obj=alpha, Thread=4
+//       Task=3, obj=delta, Thread=3
+//       Task=4, obj=gamma, Thread=1

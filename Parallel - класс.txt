@@ -1,0 +1,51 @@
+Parallel - класс
+ 
+Предоставляет поддержку параллельных циклов и областей.
+
+Пространство имен:   System.Threading.Tasks
+Сборка:  mscorlib (в mscorlib.dll)
+
+Иерархия наследования
+System.Object
+System.Threading.Tasks.Parallel
+
+Синтаксис
+[HostProtectionAttribute(SecurityAction.LinkDemand, Synchronization = true, ExternalThreading = true)]
+public static class Parallel
+
+Методы
+
+ For(Int32, Int32, Action<Int32, ParallelLoopState>)	Выполняет цикл for (For в Visual Basic), обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ For(Int32, Int32, Action<Int32>)	Выполняет цикл for (For в Visual Basic), обеспечивая возможность параллельного выполнения итераций.
+ For(Int32, Int32, ParallelOptions, Action<Int32, ParallelLoopState>)	Выполняет цикл for (For в Visual Basic), обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ For(Int32, Int32, ParallelOptions, Action<Int32>)	Выполняет цикл for (For в Visual Basic), обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.
+ For(Int64, Int64, Action<Int64, ParallelLoopState>)	Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ For(Int64, Int64, Action<Int64>)	Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами, в котором итерации могут выполняться параллельно.
+ For(Int64, Int64, ParallelOptions, Action<Int64, ParallelLoopState>)	Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ For(Int64, Int64, ParallelOptions, Action<Int64>)	Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами, обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.
+ For<TLocal>(Int32, Int32, Func<TLocal>, Func<Int32, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)	Выполняет цикл for (For в Visual Basic) с локальными данными потока, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ For<TLocal>(Int32, Int32, ParallelOptions, Func<TLocal>, Func<Int32, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)	Выполняет цикл for (For в Visual Basic) с локальными данными потока, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ For<TLocal>(Int64, Int64, Func<TLocal>, Func<Int64, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)	Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами и локальными данными потока, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ For<TLocal>(Int64, Int64, ParallelOptions, Func<TLocal>, Func<Int64, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)	Выполняет цикл for (For в Visual Basic) с 64-разрядными индексами и локальными данными потока, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource>(IEnumerable<TSource>, Action<TSource, ParallelLoopState, Int64>)	Выполняет операцию foreach (For Each в Visual Basic) с 64-разрядными индексами для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource>(IEnumerable<TSource>, Action<TSource, ParallelLoopState>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource>(IEnumerable<TSource>, Action<TSource>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций.
+ ForEach<TSource>(IEnumerable<TSource>, ParallelOptions, Action<TSource, ParallelLoopState, Int64>)	Выполняет операцию foreach (For Each в Visual Basic) с 64-разрядными индексами для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource>(IEnumerable<TSource>, ParallelOptions, Action<TSource, ParallelLoopState>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource>(IEnumerable<TSource>, ParallelOptions, Action<TSource>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.
+ ForEach<TSource>(OrderablePartitioner<TSource>, Action<TSource, ParallelLoopState, Int64>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта OrderablePartitioner<TSource>, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource>(OrderablePartitioner<TSource>, ParallelOptions, Action<TSource, ParallelLoopState, Int64>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта OrderablePartitioner<TSource>, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource>(Partitioner<TSource>, Action<TSource, ParallelLoopState>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта System.Collections.Concurrent.Partitioner, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource>(Partitioner<TSource>, Action<TSource>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта Partitioner, обеспечивая возможность параллельного выполнения итераций.
+ ForEach<TSource>(Partitioner<TSource>, ParallelOptions, Action<TSource, ParallelLoopState>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта Partitioner, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource>(Partitioner<TSource>, ParallelOptions, Action<TSource>)	Выполняет операцию foreach (For Each в Visual Basic) для объекта Partitioner, обеспечивая возможность параллельного выполнения итераций и настройки параметров цикла.
+ ForEach<TSource, TLocal>(IEnumerable<TSource>, Func<TLocal>, Func<TSource, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)	Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource, TLocal>(IEnumerable<TSource>, Func<TLocal>, Func<TSource, ParallelLoopState, Int64, TLocal, TLocal>, Action<TLocal>)	Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource, TLocal>(IEnumerable<TSource>, ParallelOptions, Func<TLocal>, Func<TSource, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)	Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource, TLocal>(IEnumerable<TSource>, ParallelOptions, Func<TLocal>, Func<TSource, ParallelLoopState, Int64, TLocal, TLocal>, Action<TLocal>)	Выполняет операцию foreach (For Each в Visual Basic) с 64-разрядными индексами и локальными данными потока для объекта IEnumerable, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource, TLocal>(OrderablePartitioner<TSource>, Func<TLocal>, Func<TSource, ParallelLoopState, Int64, TLocal, TLocal>, Action<TLocal>)	Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта OrderablePartitioner<TSource>, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource, TLocal>(OrderablePartitioner<TSource>, ParallelOptions, Func<TLocal>, Func<TSource, ParallelLoopState, Int64, TLocal, TLocal>, Action<TLocal>)	Выполняет операцию foreach (For Each в Visual Basic) с 64-разрядными индексами и локальными данными потока для объекта OrderablePartitioner<TSource>, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource, TLocal>(Partitioner<TSource>, Func<TLocal>, Func<TSource, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)	Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта Partitioner, обеспечивая возможность параллельного выполнения итераций, а также контроля состояния цикла и управления этим состоянием.
+ ForEach<TSource, TLocal>(Partitioner<TSource>, ParallelOptions, Func<TLocal>, Func<TSource, ParallelLoopState, TLocal, TLocal>, Action<TLocal>)	Выполняет операцию foreach (For Each в Visual Basic) с локальными данными потока для объекта Partitioner, обеспечивая возможность параллельного выполнения итераций, настройки параметров цикла, а также контроля состояния цикла и управления этим состоянием.
+ Invoke(Action[])	Выполняет все предоставленные действия, по возможности в параллельном режиме.
+ Invoke(ParallelOptions, Action[])	Выполняет каждое из указанных действий по возможности в параллельном режиме, если операция не отменена пользователем.

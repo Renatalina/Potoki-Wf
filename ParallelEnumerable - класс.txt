@@ -1,0 +1,221 @@
+ParallelEnumerable - класс
+ 
+Предоставляет набор методов для выполнения запросов к объектам, реализующим ParallelQuery{TSource}. Это параллельный эквивалент объекта Enumerable.
+Пространство имен:   System.Linq
+Сборка:  System.Core (в System.Core.dll)
+
+Иерархия наследования
+System.Object
+  System.Linq.ParallelEnumerable
+
+Синтаксис
+public static class ParallelEnumerable
+
+Методы
+ static	Aggregate<TSource>(ParallelQuery<TSource>, Func<TSource, TSource, TSource>)	Параллельно применяет к последовательности агрегатную функцию.
+ static	Aggregate<TSource, TAccumulate>(ParallelQuery<TSource>, TAccumulate, Func<TAccumulate, TSource, TAccumulate>)	Параллельно применяет к последовательности агрегатную функцию. Указанное начальное значение используется в качестве исходного значения агрегатной операции.
+ static	Aggregate<TSource, TAccumulate, TResult>(ParallelQuery<TSource>, TAccumulate, Func<TAccumulate, TSource, TAccumulate>, Func<TAccumulate, TAccumulate, TAccumulate>, Func<TAccumulate, TResult>)	Параллельно применяет к последовательности агрегатную функцию. Эта перегрузка недоступна в последовательной реализации.
+ static	Aggregate<TSource, TAccumulate, TResult>(ParallelQuery<TSource>, TAccumulate, Func<TAccumulate, TSource, TAccumulate>, Func<TAccumulate, TResult>)	Параллельно применяет к последовательности агрегатную функцию. Указанное начальное значение служит исходным значением для агрегатной операции, а указанная функция используется для выбора результирующего значения.
+ static	Aggregate<TSource, TAccumulate, TResult>(ParallelQuery<TSource>, Func<TAccumulate>, Func<TAccumulate, TSource, TAccumulate>, Func<TAccumulate, TAccumulate, TAccumulate>, Func<TAccumulate, TResult>)	Параллельно применяет к последовательности агрегатную функцию. Эта перегрузка недоступна в последовательной реализации.
+ static	All<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Параллельно проверяет, все ли элементы последовательности удовлетворяют условию.
+ static	Any<TSource>(ParallelQuery<TSource>)	Проверяет, содержит ли параллельная последовательность какие-либо элементы.
+ static	Any<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Параллельно проверяет, удовлетворяет ли условию хотя бы один элемент в последовательности.
+ static	AsEnumerable<TSource>(ParallelQuery<TSource>)	Преобразует ParallelQuery<TSource> в IEnumerable<T> для принудительного последовательного вычисления запроса.
+ static	AsOrdered(ParallelQuery)	Позволяет обрабатывать источник данных как упорядоченный независимо от отсутствия упорядоченности по умолчанию. Метод AsOrdered можно вызывать только для неуниверсальных последовательностей, возвращаемых методами AsParallel, ParallelEnumerable.Range и ParallelEnumerable.Repeat.
+ static	AsOrdered<TSource>(ParallelQuery<TSource>)	Позволяет обрабатывать источник данных как упорядоченный независимо от отсутствия упорядоченности по умолчанию. Метод AsOrdered можно вызывать только для универсальных последовательностей, возвращаемых методами AsParallel, ParallelEnumerable.Range и ParallelEnumerable.Repeat.
+ static	AsParallel(IEnumerable)	Позволяет осуществлять параллельный запрос.
+ static	AsParallel<TSource>(IEnumerable<TSource>)	Позволяет осуществлять параллельный запрос.
+ static	AsParallel<TSource>(Partitioner<TSource>)	Позволяет осуществлять параллельный запрос, производимый модулем секционирования, предназначенным для разделения входной последовательности на секции.
+ static	AsSequential<TSource>(ParallelQuery<TSource>)	Преобразует ParallelQuery<TSource> в IEnumerable<T> для принудительного последовательного вычисления запроса.
+ static	AsUnordered<TSource>(ParallelQuery<TSource>)	Позволяет обрабатывать промежуточный запрос как содержащий неупорядоченные элементы.
+ static	Average(ParallelQuery<Decimal>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average(ParallelQuery<Double>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average(ParallelQuery<Int32>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average(ParallelQuery<Int64>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average(ParallelQuery<Nullable<Decimal>>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average(ParallelQuery<Nullable<Double>>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average(ParallelQuery<Nullable<Int32>>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average(ParallelQuery<Nullable<Int64>>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average(ParallelQuery<Nullable<Single>>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average(ParallelQuery<Single>)	Параллельно вычисляет среднее значение для последовательности значений.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Decimal>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Double>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Int32>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Int64>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Decimal>>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Double>>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Int32>>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Int64>>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Single>>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Average<TSource>(ParallelQuery<TSource>, Func<TSource, Single>)	Параллельно вычисляет среднее значение для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Cast<TResult>(ParallelQuery)	Преобразует элементы запроса ParallelQuery в заданный тип.
+ static	Concat<TSource>(ParallelQuery<TSource>, IEnumerable<TSource>)	Устарело.Эту перегрузку Concat вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Concat<TSource>(ParallelQuery<TSource>, ParallelQuery<TSource>)	Сцепляет две параллельные последовательности.
+ static	Contains<TSource>(ParallelQuery<TSource>, TSource)	Параллельно определяет, содержится ли указанный элемент в последовательности, используя компаратор проверки на равенство по умолчанию.
+ static	Contains<TSource>(ParallelQuery<TSource>, TSource, IEqualityComparer<TSource>)	Параллельно определяет, содержит ли последовательность указанный элемент, используя указанный IEqualityComparer<T>.
+ static	Count<TSource>(ParallelQuery<TSource>)	Возвращает количество элементов в параллельной последовательности.
+ static	Count<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Возвращает число, представляющее количество элементов параллельной последовательности, удовлетворяющих заданному условию.
+ static	DefaultIfEmpty<TSource>(ParallelQuery<TSource>)	Возвращает элементы указанной параллельной последовательности или одноэлементную коллекцию, содержащую значение параметра типа по умолчанию, если последовательность пуста.
+ static	DefaultIfEmpty<TSource>(ParallelQuery<TSource>, TSource)	Возвращает элементы указанной параллельной последовательности или одноэлементную коллекцию, содержащую указанное значение, если последовательность пуста.
+ static	Distinct<TSource>(ParallelQuery<TSource>)	Возвращает различающиеся элементы параллельной последовательности, используя для сравнения значений компаратор проверки на равенство по умолчанию.
+ static	Distinct<TSource>(ParallelQuery<TSource>, IEqualityComparer<TSource>)	Возвращает различающиеся элементы параллельной последовательности, используя указанную IEqualityComparer<T> для сравнения значений.
+ static	ElementAt<TSource>(ParallelQuery<TSource>, Int32)	Возвращает элемент по указанному индексу в параллельной последовательности.
+ static	ElementAtOrDefault<TSource>(ParallelQuery<TSource>, Int32)	Возвращает элемент по указанному индексу в параллельной последовательности или значение по умолчанию, если индекс вне допустимого диапазона.
+ static	Empty<TResult>()	Возвращает пустой набор ParallelQuery{TResult} с указанным аргументом типа.
+ static	Except<TSource>(ParallelQuery<TSource>, IEnumerable<TSource>)	Устарело.Эту перегрузку Except вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Except<TSource>(ParallelQuery<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>)	Устарело.Эту перегрузку Except вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Except<TSource>(ParallelQuery<TSource>, ParallelQuery<TSource>)	Находит разность множеств, представленных двумя параллельными последовательностями, используя для сравнения значений компаратор проверки на равенство по умолчанию.
+ static	Except<TSource>(ParallelQuery<TSource>, ParallelQuery<TSource>, IEqualityComparer<TSource>)	Находит разность множеств, представленных двумя параллельными последовательностями, используя указанный IEqualityComparer<T> для сравнения значений.
+ static	First<TSource>(ParallelQuery<TSource>)	Возвращает первый элемент параллельной последовательности.
+ static	First<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Возвращает первый элемент параллельной последовательности, удовлетворяющий указанному условию.
+ static	FirstOrDefault<TSource>(ParallelQuery<TSource>)	Возвращает первый элемент параллельной последовательности или значение по умолчанию, если последовательность не содержит элементов.
+ static	FirstOrDefault<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Возвращает первый удовлетворяющий условию элемент параллельной последовательности или значение по умолчанию, если таких элементов не найдено.
+ static	ForAll<TSource>(ParallelQuery<TSource>, Action<TSource>)	Параллельно вызывает указанное действие для каждого элемента в source.
+ static	GroupBy<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>)	Группирует элементы параллельной последовательности в соответствии с заданной функцией селектора ключа.
+ static	GroupBy<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>)	Параллельно группирует элементы последовательности в соответствии с заданной функцией селектора ключа и сравнивает ключи с помощью указанного IComparer<T>.
+ static	GroupBy<TSource, TKey, TElement>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TSource, TElement>)	Группирует элементы параллельной последовательности в соответствии с заданной функцией селектора ключа и проецирует элементы каждой группы с помощью указанной функции.
+ static	GroupBy<TSource, TKey, TElement>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>)	Группирует элементы параллельной последовательности в соответствии с функцией селектора ключа. Ключи сравниваются с помощью компаратора, элементы каждой группы проецируются с помощью указанной функции.
+ static	GroupBy<TSource, TKey, TResult>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TKey, IEnumerable<TSource>, TResult>)	Группирует элементы параллельной последовательности в соответствии с заданной функцией селектора ключа и создает результирующее значение для каждой группы и ее ключа.
+ static	GroupBy<TSource, TKey, TResult>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TKey, IEnumerable<TSource>, TResult>, IEqualityComparer<TKey>)	Группирует элементы параллельной последовательности в соответствии с заданной функцией селектора ключа и создает результирующее значение для каждой группы и ее ключа. Ключи сравниваются с использованием заданного компаратора.
+ static	GroupBy<TSource, TKey, TElement, TResult>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, Func<TKey, IEnumerable<TElement>, TResult>)	Группирует элементы параллельной последовательности в соответствии с заданной функцией селектора ключа и создает результирующее значение для каждой группы и ее ключа. Элементы каждой группы проецируются с помощью указанной функции.
+ static	GroupBy<TSource, TKey, TElement, TResult>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, Func<TKey, IEnumerable<TElement>, TResult>, IEqualityComparer<TKey>)	Группирует элементы последовательности в соответствии с заданной функцией селектора ключа и создает результирующее значение для каждой группы и ее ключа. Значения ключей сравниваются с помощью указанного компаратора, элементы каждой группы проецируются с помощью указанной функции.
+ static	GroupJoin<TOuter, TInner, TKey, TResult>(ParallelQuery<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>)	Устарело.Эту перегрузку GroupJoin вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	GroupJoin<TOuter, TInner, TKey, TResult>(ParallelQuery<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>, IEqualityComparer<TKey>)	Устарело.Эту перегрузку GroupJoin вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	GroupJoin<TOuter, TInner, TKey, TResult>(ParallelQuery<TOuter>, ParallelQuery<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>)	Устанавливает параллельную корреляцию между элементами двух последовательностей на основе равенства ключей и группирует результаты. Для сравнения ключей используется компаратор проверки на равенство по умолчанию.
+ static	GroupJoin<TOuter, TInner, TKey, TResult>(ParallelQuery<TOuter>, ParallelQuery<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>, IEqualityComparer<TKey>)	Устанавливает параллельную корреляцию между элементами двух последовательностей на основе равенства ключа и группирует результаты. Указанный IEqualityComparer<T> используется для сравнения ключей.
+ static	Intersect<TSource>(ParallelQuery<TSource>, IEnumerable<TSource>)	Устарело.Эту перегрузку Intersect вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Intersect<TSource>(ParallelQuery<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>)	Устарело.Эту перегрузку Intersect вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Intersect<TSource>(ParallelQuery<TSource>, ParallelQuery<TSource>)	Находит пересечение множеств, представленных двумя параллельными последовательностями, используя для сравнения значений компаратор проверки на равенство по умолчанию.
+ static	Intersect<TSource>(ParallelQuery<TSource>, ParallelQuery<TSource>, IEqualityComparer<TSource>)	Находит пересечение множеств, представленных двумя параллельными последовательностями, используя для сравнения значений указанный компаратор IEqualityComparer{T}.
+ static	Join<TOuter, TInner, TKey, TResult>(ParallelQuery<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>)	
+Устарело.Эту перегрузку Join вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Join<TOuter, TInner, TKey, TResult>(ParallelQuery<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>, IEqualityComparer<TKey>)	
+Устарело.Эту перегрузку Join вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Join<TOuter, TInner, TKey, TResult>(ParallelQuery<TOuter>, ParallelQuery<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>)	
+Устанавливает параллельную корреляцию между элементами двух последовательностей на основе сопоставления ключей. Для сравнения ключей используется компаратор проверки на равенство по умолчанию.
+ static	Join<TOuter, TInner, TKey, TResult>(ParallelQuery<TOuter>, ParallelQuery<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>, IEqualityComparer<TKey>)	
+Устанавливает параллельную корреляцию между элементами двух последовательностей на основе сопоставления ключей. Указанный IEqualityComparer<T> используется для сравнения ключей.
+ static	Last<TSource>(ParallelQuery<TSource>)	Возвращает последний элемент параллельной последовательности.
+ static	Last<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Возвращает последний элемент параллельной последовательности, удовлетворяющий указанному условию.
+ static	LastOrDefault<TSource>(ParallelQuery<TSource>)	Возвращает последний элемент параллельной последовательности или значение по умолчанию, если последовательность не содержит элементов.
+ static	LastOrDefault<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Возвращает последний элемент параллельной последовательности, удовлетворяющий указанному условию, или значение по умолчанию, если ни одного такого элемента не найдено.
+ static	LongCount<TSource>(ParallelQuery<TSource>)	Возвращает значение типа Int64, представляющее общее число элементов в параллельной последовательности.
+ static	LongCount<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Возвращает значение типа Int64, представляющее число элементов параллельной последовательности, удовлетворяющих заданному условию.
+ static	Max(ParallelQuery<Decimal>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max(ParallelQuery<Double>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max(ParallelQuery<Int32>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max(ParallelQuery<Int64>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max(ParallelQuery<Nullable<Decimal>>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max(ParallelQuery<Nullable<Double>>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max(ParallelQuery<Nullable<Int32>>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max(ParallelQuery<Nullable<Int64>>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max(ParallelQuery<Nullable<Single>>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max(ParallelQuery<Single>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max<TSource>(ParallelQuery<TSource>)	Возвращает максимальное значение, которое содержится в параллельно обрабатываемой последовательности значений.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Decimal>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Double>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Int32>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Int64>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Decimal>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Double>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Int32>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Int64>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Single>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource>(ParallelQuery<TSource>, Func<TSource, Single>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Max<TSource, TResult>(ParallelQuery<TSource>, Func<TSource, TResult>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает максимальное значение.
+ static	Min(ParallelQuery<Decimal>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min(ParallelQuery<Double>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min(ParallelQuery<Int32>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min(ParallelQuery<Int64>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min(ParallelQuery<Nullable<Decimal>>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min(ParallelQuery<Nullable<Double>>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min(ParallelQuery<Nullable<Int32>>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min(ParallelQuery<Nullable<Int64>>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min(ParallelQuery<Nullable<Single>>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min(ParallelQuery<Single>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min<TSource>(ParallelQuery<TSource>)	Возвращает минимальное значение, которое содержится в параллельной последовательности значений.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Decimal>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Double>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Int32>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Int64>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Decimal>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Double>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Int32>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Int64>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Single>>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource>(ParallelQuery<TSource>, Func<TSource, Single>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	Min<TSource, TResult>(ParallelQuery<TSource>, Func<TSource, TResult>)	Параллельно вызывает функцию преобразования для каждого элемента последовательности и возвращает минимальное значение.
+ static	OfType<TResult>(ParallelQuery)	Выполняет фильтрацию элементов ParallelQuery по заданному типу.
+ static	OrderBy<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>)	Параллельно сортирует элементы последовательности в порядке возрастания ключа.
+ static	OrderBy<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>, IComparer<TKey>)	Параллельно сортирует элементы последовательности в порядке возрастания с использованием указанного компаратора.
+ static	OrderByDescending<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>)	Параллельно сортирует элементы последовательности в порядке убывания ключа.
+ static	OrderByDescending<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>, IComparer<TKey>)	Сортирует элементы последовательности в порядке убывания с использованием указанного компаратора.
+ static	Range(Int32, Int32)	Генерирует параллельную последовательность целых чисел в заданном диапазоне.
+ static	Repeat<TResult>(TResult, Int32)	Создает параллельную последовательность, содержащую одно повторяющееся значение.
+ static	Reverse<TSource>(ParallelQuery<TSource>)	Изменяет порядок элементов параллельной последовательности на противоположный.
+ static	Select<TSource, TResult>(ParallelQuery<TSource>, Func<TSource, TResult>)	Параллельно проецирует каждый элемент последовательности в новую форму.
+ static	Select<TSource, TResult>(ParallelQuery<TSource>, Func<TSource, Int32, TResult>)	Параллельно проецирует каждый элемент последовательности в новую форму, добавляя индекс элемента.
+ static	SelectMany<TSource, TResult>(ParallelQuery<TSource>, Func<TSource, IEnumerable<TResult>>)	Параллельно проецирует каждый элемент последовательности в IEnumerable<T> и объединяет результирующие последовательности в одну последовательность.
+ static	SelectMany<TSource, TResult>(ParallelQuery<TSource>, Func<TSource, Int32, IEnumerable<TResult>>)	Параллельно проецирует каждый элемент последовательности в IEnumerable<T>, и объединяет результирующие последовательности в одну последовательность. Индекс каждого элемента исходной последовательности используется в проецированной форме этого элемента.
+ static	SelectMany<TSource, TCollection, TResult>(ParallelQuery<TSource>, Func<TSource, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>)	Проецирует каждый элемент последовательности в IEnumerable<T>, объединяет результирующие последовательности в одну и вызывает функцию селектора результата для каждого элемента этой последовательности.
+ static	SelectMany<TSource, TCollection, TResult>(ParallelQuery<TSource>, Func<TSource, Int32, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>)	Проецирует каждый элемент последовательности в IEnumerable<T>, объединяет результирующие последовательности в одну и вызывает функцию селектора результата для каждого элемента этой последовательности. Индекс каждого элемента исходной последовательности используется в промежуточной проецированной форме этого элемента.
+ static	SequenceEqual<TSource>(ParallelQuery<TSource>, IEnumerable<TSource>)	Устарело.Эту перегрузку SequenceEqual вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	SequenceEqual<TSource>(ParallelQuery<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>)	Устарело.Эту перегрузку SequenceEqual вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	SequenceEqual<TSource>(ParallelQuery<TSource>, ParallelQuery<TSource>)	Определяет, совпадают ли две параллельные последовательности, используя для сравнения элементов компаратор проверки на равенство по умолчанию, предназначенный для их типа.
+ static	SequenceEqual<TSource>(ParallelQuery<TSource>, ParallelQuery<TSource>, IEqualityComparer<TSource>)	Определяет, совпадают ли две параллельные последовательности, используя для сравнения элементов указанный компаратор проверки на равенство IEqualityComparer{T}.
+ static	Single<TSource>(ParallelQuery<TSource>)	Возвращает единственный элемент параллельной последовательности и генерирует исключение, если число элементов последовательности отлично от 1.
+ static	Single<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Возвращает единственный элемент параллельной последовательности, удовлетворяющий заданному условию, и генерирует исключение, если таких элементов больше одного.
+ static	SingleOrDefault<TSource>(ParallelQuery<TSource>)	Возвращает единственный элемент параллельной последовательности или значение по умолчанию, если последовательность пуста; если в последовательности более одного элемента, создается исключение.
+ static	SingleOrDefault<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Возвращает единственный элемент параллельной последовательности, удовлетворяющий заданному условию, или значение по умолчанию, если такого элемента не существует; если условию удовлетворяет более одного элемента, создается исключение.
+ static	Skip<TSource>(ParallelQuery<TSource>, Int32)	Пропускает заданное число элементов в параллельной последовательности и возвращает остальные элементы.
+ static	SkipWhile<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Пропускает элементы в параллельной последовательности, пока они удовлетворяют заданному условию, и затем возвращает оставшиеся элементы.
+ static	SkipWhile<TSource>(ParallelQuery<TSource>, Func<TSource, Int32, Boolean>)	Пропускает элементы в параллельной последовательности, пока они удовлетворяют заданному условию, и затем возвращает оставшиеся элементы. Индекс элемента используется в логике функции предиката.
+ static	Sum(ParallelQuery<Decimal>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum(ParallelQuery<Double>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum(ParallelQuery<Int32>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum(ParallelQuery<Int64>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum(ParallelQuery<Nullable<Decimal>>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum(ParallelQuery<Nullable<Double>>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum(ParallelQuery<Nullable<Int32>>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum(ParallelQuery<Nullable<Int64>>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum(ParallelQuery<Nullable<Single>>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum(ParallelQuery<Single>)	Параллельно вычисляет сумму для последовательности значений.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Decimal>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Double>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Int32>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Int64>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Decimal>>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Double>>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Int32>>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Int64>>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Nullable<Single>>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Sum<TSource>(ParallelQuery<TSource>, Func<TSource, Single>)	Параллельно вычисляет сумму для последовательности значений, получаемой в результате применения функции преобразования к каждому элементу входной последовательности.
+ static	Take<TSource>(ParallelQuery<TSource>, Int32)	Возвращает указанное число идущих подряд элементов с начала параллельной последовательности.
+ static	TakeWhile<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Возвращает цепочку элементов параллельной последовательности, удовлетворяющих указанному условию.
+ static	TakeWhile<TSource>(ParallelQuery<TSource>, Func<TSource, Int32, Boolean>)	Возвращает цепочку элементов параллельной последовательности, удовлетворяющих указанному условию. Индекс элемента используется в логике функции предиката.
+ static	ThenBy<TSource, TKey>(OrderedParallelQuery<TSource>, Func<TSource, TKey>)	Параллельно выполняет дополнительное упорядочение элементов последовательности в порядке возрастания ключа.
+ static	ThenBy<TSource, TKey>(OrderedParallelQuery<TSource>, Func<TSource, TKey>, IComparer<TKey>)	Параллельно выполняет дополнительное упорядочение элементов последовательности в порядке возрастания с использованием указанного компаратора.
+ static	ThenByDescending<TSource, TKey>(OrderedParallelQuery<TSource>, Func<TSource, TKey>)	Параллельно выполняет дополнительное упорядочение элементов последовательности в порядке убывания ключа.
+ static	ThenByDescending<TSource, TKey>(OrderedParallelQuery<TSource>, Func<TSource, TKey>, IComparer<TKey>)	Параллельно выполняет дополнительное упорядочение элементов последовательности в порядке убывания с использованием указанного компаратора.
+ static	ToArray<TSource>(ParallelQuery<TSource>)	Создает массив из ParallelQuery<TSource>.
+ static	ToDictionary<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>)	Создает Dictionary<TKey, TValue> из ParallelQuery<TSource> в соответствии с заданной функцией селектора ключа.
+ static	ToDictionary<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>)	Создает Dictionary<TKey, TValue> из ParallelQuery<TSource> в соответствии с указанной функцией выбора ключа функции и компаратором ключей.
+ static	ToDictionary<TSource, TKey, TElement>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TSource, TElement>)	Создает Dictionary<TKey, TValue> из ParallelQuery<TSource> в соответствии с указанной функцией выбора ключа и функции селектора элемента.
+ static	ToDictionary<TSource, TKey, TElement>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>)	Создает Dictionary<TKey, TValue> из ParallelQuery<TSource> в соответствии с заданной функцией селектора ключа, средства сравнения и функции выбора элементов.
+ static	ToList<TSource>(ParallelQuery<TSource>)	Создает List<T> из ParallelQuery<TSource>.
+ static	ToLookup<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>)	Создает ILookup<TKey, TElement> из ParallelQuery<TSource> в соответствии с заданной функцией селектора ключа.
+ static	ToLookup<TSource, TKey>(ParallelQuery<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>)	Создает ILookup<TKey, TElement> из ParallelQuery<TSource> в соответствии с указанной функцией выбора ключа функции и компаратором ключей.
+ static	ToLookup<TSource, TKey, TElement>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TSource, TElement>)	Создает ILookup<TKey, TElement> из ParallelQuery<TSource> в соответствии с указанной функцией выбора ключа и функции селектора элемента.
+ static	ToLookup<TSource, TKey, TElement>(ParallelQuery<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>)	Создает ILookup<TKey, TElement> из ParallelQuery<TSource> в соответствии с заданной функцией селектора ключа и компаратором функции выбора элементов.
+ static	Union<TSource>(ParallelQuery<TSource>, IEnumerable<TSource>)	Устарело.Эту перегрузку Union вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Union<TSource>(ParallelQuery<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>)	Устарело.Эту перегрузку Union вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Union<TSource>(ParallelQuery<TSource>, ParallelQuery<TSource>)	Находит объединение множеств, представленных двумя параллельными последовательностями, используя компаратор проверки на равенство по умолчанию.
+ static	Union<TSource>(ParallelQuery<TSource>, ParallelQuery<TSource>, IEqualityComparer<TSource>)	Находит объединение множеств, представленных двумя параллельными последовательностями, используя указанный компаратор IEqualityComparer{T}.
+ static	Where<TSource>(ParallelQuery<TSource>, Func<TSource, Boolean>)	Выполняет параллельную фильтрацию последовательности значений на основе предиката.
+ static	Where<TSource>(ParallelQuery<TSource>, Func<TSource, Int32, Boolean>)	Выполняет параллельную фильтрацию последовательности значений на основе предиката. Индекс каждого элемента используется в логике функции предиката.
+ static	WithCancellation<TSource>(ParallelQuery<TSource>, CancellationToken)	Наборы CancellationToken для связи с запросом.
+ static	WithDegreeOfParallelism<TSource>(ParallelQuery<TSource>, Int32)	Задает степень параллельности для использования в запросе. Степень параллельности — это максимальное число задач, выполняемых одновременно для обработки запроса.
+ static	WithExecutionMode<TSource>(ParallelQuery<TSource>, ParallelExecutionMode)	Задает режим выполнения запроса.
+ static	WithMergeOptions<TSource>(ParallelQuery<TSource>, ParallelMergeOptions)	Задает параметры слияния для запроса, определяющие способ буферизации выходных данных запросом.
+ static	Zip<TFirst, TSecond, TResult>(ParallelQuery<TFirst>, IEnumerable<TSecond>, Func<TFirst, TSecond, TResult>)	Устарело.Эту перегрузку Zip вызывать не следует. Этот метод помечен как устаревший и всегда вызывает исключение NotSupportedException при вызове.
+ static	Zip<TFirst, TSecond, TResult>(ParallelQuery<TFirst>, ParallelQuery<TSecond>, Func<TFirst, TSecond, TResult>)	Параллельно объединяет две последовательности, используя указанную функцию предиката.

@@ -1,0 +1,7 @@
+c:\users\висковатых.наталия\source\repos\Tasks\Tasks\bin\Debug\Tasks.exe.config
+c:\users\висковатых.наталия\source\repos\Tasks\Tasks\bin\Debug\Tasks.exe
+c:\users\висковатых.наталия\source\repos\Tasks\Tasks\bin\Debug\Tasks.pdb
+c:\users\висковатых.наталия\source\repos\Tasks\Tasks\obj\Debug\ConsoleTasks.csprojResolveAssemblyReference.cache
+c:\users\висковатых.наталия\source\repos\Tasks\Tasks\obj\Debug\ConsoleTasks.csproj.CoreCompileInputs.cache
+c:\users\висковатых.наталия\source\repos\Tasks\Tasks\obj\Debug\Tasks.exe
+c:\users\висковатых.наталия\source\repos\Tasks\Tasks\obj\Debug\Tasks.pdb

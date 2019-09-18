@@ -1,0 +1,40 @@
+TaskScheduler - класс
+ 
+Представляет объект, обрабатывающий низкоуровневую постановку задач в очередь на потоки.
+Пространство имен:   System.Threading.Tasks
+Сборка:  mscorlib (в mscorlib.dll)
+
+Иерархия наследования
+System.Object
+System.Threading.Tasks.TaskScheduler
+
+Синтаксис
+[HostProtectionAttribute(SecurityAction.LinkDemand, Synchronization = true, ExternalThreading = true)]
+[PermissionSetAttribute(SecurityAction.InheritanceDemand, Unrestricted = true)]
+public abstract class TaskScheduler
+
+Конструкторы
+ TaskScheduler()	Инициализирует объект TaskScheduler.
+
+Свойства
+ Current	Получает объект TaskScheduler, связанный с выполняемой в настоящий момент задачей.
+ Default	Получает экземпляр TaskScheduler по умолчанию, предоставляемый платформой .NET Framework.
+ Id	Получает уникальный идентификатор данного объекта TaskScheduler.
+ MaximumConcurrencyLevel	Указывает максимальный уровень параллелизма, который может поддерживаться данным планировщиком TaskScheduler.
+
+Методы
+ Equals(Object)	Определяет, равен ли заданный объект текущему объекту.(Наследуется от Object.)
+ Finalize()	Позволяет объекту попытаться освободить ресурсы и выполнить другие операции по очистке перед тем, как объект будет утилизирован сборщиком мусора. (Наследуется от Object.)
+ FromCurrentSynchronizationContext()	Создает объект TaskScheduler, связанный с текущим объектом System.Threading.SynchronizationContext.
+ GetHashCode()	Играет роль хэш-функции для определённого типа.(Наследуется от Object.)
+ GetScheduledTasks()	Создает перечисляемый объект экземпляров Task, которые в настоящее время находятся в очереди планировщика, ожидая выполнения (только для поддержки отладки).
+ GetType()	Возвращает объект класса Type для текущего экземпляра. (Наследуется от Object.)
+ MemberwiseClone()	Создает "поверхностную" копию текущего объекта. (Наследуется от Object.)
+ QueueTask(Task)	Ставит объект Task в очередь планировщика.
+ ToString()	Возвращает строковое представление текущего объекта.(Наследуется от Object.)
+ TryDequeue(Task)	Пытается удалить из очереди задачу Task, ранее поставленную в очередь данного планировщика.
+ TryExecuteTask(Task)	Пытается выполнить предоставленную задачу Task в этом планировщике.
+ TryExecuteTaskInline(Task, Boolean)	Определяет, можно ли выполнить предоставленную задачу Task в этом вызове синхронно, и если возможно, выполняет ее.
+
+События
+ UnobservedTaskException	Происходит, если непредвиденное исключение задачи со сбоем готово запустить политику эскалации исключений, которая по умолчанию прекратит процесс.
